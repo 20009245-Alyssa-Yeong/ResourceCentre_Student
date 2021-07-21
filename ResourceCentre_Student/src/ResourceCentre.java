@@ -176,14 +176,23 @@ public class ResourceCentre {
 	}
 
 	public static Chromebook inputChromebook() {
-		Chromebook cb = null;
 		// write your code here
+		String tag = Helper.readString("Enter asset tag > ");
+		String desc = Helper.readString("Enter description > ");
+		String os = Helper.readString("Enter OS > ");
+
+		Chromebook cb = new Chromebook(tag, desc, os);
+
 		return cb;
 
 	}
 
 	public static void addChromebook(ArrayList<Chromebook> chromebookList, Chromebook cb) {
 		// write your code here
+		
+		chromebookList.add(cb);
+		System.out.println("Chromebook has been added!");
+		
 	}
 
 	// ================================= Option 3 Loan an item (CRUD - Update)
@@ -228,7 +237,8 @@ public class ResourceCentre {
 
 	}
 
-	// ================================= Option 4 Return an item (CRUD -// Update)=================================
+	// ================================= Option 4 Return an item (CRUD -
+	// Update)=================================
 	public static boolean doReturnCamcorder(ArrayList<Camcorder> camcorderList, String tag) {
 		boolean isReturned = false;
 
@@ -275,15 +285,19 @@ public class ResourceCentre {
 
 	public static void returnChromebook(ArrayList<Chromebook> chromebookList) {
 		// write your code here
+
 		ResourceCentre.viewAllChromebook(chromebookList);
 		String tag = Helper.readString("Enter asset tag > ");
 		Boolean isReturned = doReturnChromebook(chromebookList, tag);
+
+
 
 		if (isReturned == false) {
 			System.out.println("Invalid asset tag!");
 		} else {
 			System.out.println("Camcorder " + tag + " returned");
 		}
+
 
 	}
 
