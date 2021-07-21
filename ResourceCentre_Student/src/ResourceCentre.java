@@ -234,8 +234,12 @@ public class ResourceCentre {
 
 	}
 
+<<<<<<< HEAD
 	// ================================= Option 4 Return an item (CRUD -
 	// Update)=================================
+=======
+	// ================================= Option 4 Return an item (CRUD -// Update)=================================
+>>>>>>> branch 'master' of https://github.com/20009245-Alyssa-Yeong/ResourceCentre_Student.git
 	public static boolean doReturnCamcorder(ArrayList<Camcorder> camcorderList, String tag) {
 		boolean isReturned = false;
 
@@ -267,12 +271,37 @@ public class ResourceCentre {
 	public static boolean doReturnChromebook(ArrayList<Chromebook> chromebookList, String tag) {
 		boolean isReturned = false;
 		// write your code here
+
+		for (int i = 0; i < chromebookList.size(); i++) {
+			if (tag.equalsIgnoreCase(chromebookList.get(i).getAssetTag())
+					&& chromebookList.get(i).getIsAvailable() == false) {
+				chromebookList.get(i).setIsAvailable(true);
+				chromebookList.get(i).setDueDate("");
+				isReturned = true;
+
+			}
+		}
 		return isReturned;
 	}
 
 	public static void returnChromebook(ArrayList<Chromebook> chromebookList) {
 		// write your code here
+<<<<<<< HEAD
+=======
+		ResourceCentre.viewAllChromebook(chromebookList);
+		String tag = Helper.readString("Enter asset tag > ");
+		Boolean isReturned = doReturnChromebook(chromebookList, tag);
+>>>>>>> branch 'master' of https://github.com/20009245-Alyssa-Yeong/ResourceCentre_Student.git
 
+<<<<<<< HEAD
+=======
+		if (isReturned == false) {
+			System.out.println("Invalid asset tag");
+		} else {
+			System.out.println("Camcorder " + tag + " returned");
+		}
+
+>>>>>>> branch 'master' of https://github.com/20009245-Alyssa-Yeong/ResourceCentre_Student.git
 	}
 
 }
