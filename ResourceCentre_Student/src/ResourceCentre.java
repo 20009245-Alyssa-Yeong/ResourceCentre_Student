@@ -251,7 +251,7 @@ public class ResourceCentre {
 		Boolean isReturned = doReturnCamcorder(camcorderList, tag);
 
 		if (isReturned == false) {
-			System.out.println("Invalid asset tag");
+			System.out.println("Invalid asset tag!");
 		} else {
 			System.out.println("Camcorder " + tag + " returned");
 		}
@@ -280,7 +280,7 @@ public class ResourceCentre {
 		Boolean isReturned = doReturnChromebook(chromebookList, tag);
 
 		if (isReturned == false) {
-			System.out.println("Invalid asset tag");
+			System.out.println("Invalid asset tag!");
 		} else {
 			System.out.println("Camcorder " + tag + " returned");
 		}
